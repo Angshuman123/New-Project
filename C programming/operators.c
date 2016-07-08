@@ -9,12 +9,15 @@ int main(int argc, char const *argv[]) {
   gets(agestring);
 
   age = atoi(agestring);
-  if(age > 45) {
-    bonus = 1000;
+  if(age == 0) {
+    printf("You have entered invalid age, so bonus cannot be calculated.\n");
   } else {
-    bonus = 500;
+    if(age > 45) {
+      bonus = 1000;
+    } else {
+      bonus = 500;
+    }
+    printf("Your age is %d, so your bonus is %d.\n",age,bonus);
   }
-
-  printf("Your age is %d, so your bonus is %d.\n",age,bonus);
   return 0;
 }
